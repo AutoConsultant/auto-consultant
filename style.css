@@ -1,0 +1,516 @@
+/* ===========================
+   ESTILOS BASE
+=========================== */
+
+:root {
+    --black:      #1A1A1A;
+    --white:      #FFFFFF;
+    --gray-light: #F5F5F5;
+    --gray-mid:   #CCCCCC;
+    --gray-text:  #888888;
+    --border:     #D8D8D8;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-weight: 300; letter-spacing: -0.01em; line-height: 1.2; margin: 0; }
+
+h2.section-title {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin: 0 0 14px;
+    text-align: left;
+}
+
+h3 { font-weight: 600; margin: 0 0 10px; }
+
+/* Linea gruesa bajo titulos — elemento de marca del PPTX */
+.title-rule {
+    border: none;
+    border-top: 2.5px solid var(--black);
+    margin: 0 0 36px;
+}
+
+/* ===========================
+   NAVEGACION
+=========================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.nav-logo-img { height: 26px; transform: rotate(180deg); }
+
+.nav-links { display: flex; align-items: center; gap: 28px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gray-text);
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--black); }
+
+.nav-links .nav-cta {
+    background: var(--black);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.nav-links .nav-cta:hover { background: #333; color: var(--white); }
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+
+.main-wrapper { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero-top { position: relative; padding: 80px 16px 64px; overflow: hidden; }
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('img/fondo-flujo.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+.hero-label {
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-text);
+    margin: 0 0 16px;
+}
+
+.hero-top h1 {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--black);
+    margin-bottom: 16px;
+    max-width: 580px;
+    line-height: 1.25;
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    color: #555;
+    margin: 0 0 32px;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: background 0.2s;
+}
+
+.cta-button:hover { background: #333; }
+
+.separator-line { margin: 0 auto; width: 100%; height: 1px; background: var(--border); }
+
+/* ===========================
+   COMO PODEMOS AYUDARTE
+=========================== */
+
+.top-boxes-wrapper { padding: 56px 0; }
+
+.top-boxes { display: flex; justify-content: flex-start; gap: 40px; flex-wrap: wrap; margin-top: 8px; }
+
+.box-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 320px;
+}
+
+.icon-outside { position: absolute; width: 44px; height: 44px; opacity: 0.2; top: -32px; pointer-events: none; }
+.icon-left-outside  { left: 0; }
+.icon-right-outside { right: 0; }
+
+.box {
+    background: var(--white);
+    border: 1.5px solid var(--black);
+    border-radius: 6px;
+    padding: 14px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--black);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.box:hover { background: var(--black); color: var(--white); }
+
+.chevron { font-size: 10px; transition: transform 0.2s; display: inline-block; opacity: 0.6; }
+
+.box[aria-expanded="true"] { background: var(--black); color: var(--white); }
+.box[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+.hidden-menu {
+    display: none;
+    margin-top: 6px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    background: var(--gray-light);
+    width: 100%;
+}
+
+.hidden-menu h3 {
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray-text);
+    margin: 0 0 10px;
+}
+
+.menu-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--black);
+}
+
+.menu-item:last-child { margin-bottom: 0; }
+
+/* ===========================
+   PLANES DE PROYECTO (Slide 2)
+=========================== */
+
+.planes-section { padding: 56px 0; }
+
+.planes-bloque { margin-bottom: 56px; }
+.planes-bloque:last-of-type { margin-bottom: 0; }
+
+.planes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plan-card {
+    border: 1.5px solid var(--black);
+    border-radius: 6px;
+    padding: 32px 28px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-featured {
+    background: var(--black);
+    color: var(--white);
+}
+
+.plan-name { font-size: 22px; font-weight: 700; margin: 0 0 10px; }
+
+.plan-price {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.plan-iva { font-size: 13px; font-weight: 400; color: var(--gray-text); }
+.plan-featured .plan-iva { color: rgba(255,255,255,0.5); }
+
+.plan-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.plan-featured .plan-divider { border-color: rgba(255,255,255,0.2); }
+
+.plan-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.plan-list li { font-size: 13px; line-height: 1.5; color: #444; }
+.plan-featured .plan-list li { color: rgba(255,255,255,0.85); }
+
+/* ===========================
+   MANTENIMIENTO MENSUAL (Slide 3)
+=========================== */
+
+.mant-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+
+.mant-table th {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--black);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--black);
+}
+
+.mant-table td {
+    font-size: 13px;
+    color: #444;
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+.mant-table tbody tr:last-child td { border-bottom: none; }
+.mant-table tbody tr:hover td { background: var(--gray-light); }
+
+.mant-precio { font-size: 20px; font-weight: 700; color: var(--black); white-space: nowrap; }
+
+.mant-nota {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+    background: var(--gray-light);
+    max-width: 480px;
+}
+
+.mant-nota p { margin: 0; font-size: 13px; color: #555; line-height: 1.65; }
+
+.planes-footer-label {
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-text);
+    margin: 40px 0 0;
+}
+
+/* ===========================
+   ACERCA DE NOSOTROS
+=========================== */
+
+.about-section { padding: 56px 0; }
+
+.about-intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 680px;
+    margin: 0 0 40px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--gray-light);
+}
+
+.about-intro-icon { width: 44px; height: 44px; flex-shrink: 0; opacity: 0.4; }
+
+.about-intro p { margin: 0; font-size: 14px; line-height: 1.75; color: #444; }
+
+.before-after { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+
+.ba-card {
+    border: 1.5px solid var(--black);
+    border-radius: 6px;
+    padding: 28px;
+    width: 100%;
+    max-width: 380px;
+    background: var(--white);
+}
+
+.ba-featured { background: var(--black); color: var(--white); border-color: var(--black); }
+
+.ba-label {
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-text);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.ba-featured .ba-label { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.2); }
+
+.ba-items { margin-bottom: 16px; }
+
+.mini-bubble {
+    background: var(--gray-light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--black);
+}
+
+.mini-bubble:last-child { margin-bottom: 0; }
+
+.ba-featured .mini-bubble { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: var(--white); }
+
+.ba-note {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #555;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    background: var(--gray-light);
+}
+
+.ba-featured .ba-note { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.75); }
+
+.ba-arrow { font-size: 24px; color: var(--gray-mid); padding-top: 90px; flex-shrink: 0; }
+
+/* ===========================
+   CONTACTO
+=========================== */
+
+.contact-section { padding: 56px 0 72px; }
+
+.contact-boxes { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.contact-box {
+    background: var(--white);
+    border: 1.5px solid var(--black);
+    border-radius: 6px;
+    padding: 28px;
+    width: 100%;
+    max-width: 280px;
+}
+
+.contact-box h3 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0 0 14px;
+    color: var(--black);
+}
+
+.contact-box p { font-size: 13px; margin: 6px 0; color: #444; word-wrap: break-word; }
+.contact-box strong { color: var(--black); font-weight: 600; }
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+
+@media (max-width: 768px) {
+    .main-wrapper  { padding: 0 20px; }
+    .nav-inner     { padding: 12px 20px; }
+    .hero-top      { padding: 56px 0 48px; }
+    .hero-top h1   { font-size: 26px; }
+    .hero-subtitle { font-size: 14px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .icon-outside  { display: none; }
+    .top-boxes     { gap: 12px; }
+    .box-group     { max-width: 100%; }
+    .planes-grid   { grid-template-columns: 1fr; }
+    .mant-table th,
+    .mant-table td { padding: 10px 8px; font-size: 12px; }
+    .mant-precio   { font-size: 16px; }
+    .about-intro   { flex-direction: column; }
+    .before-after  { flex-direction: column; }
+    .ba-arrow      { transform: rotate(90deg); padding-top: 0; text-align: center; width: 100%; }
+    .ba-card       { max-width: 100%; }
+    .contact-box   { max-width: 100%; }
+    .site-footer   { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* Nav link activo (pagina actual) */
+.nav-active {
+    color: var(--black) !important;
+    font-weight: 700 !important;
+}
