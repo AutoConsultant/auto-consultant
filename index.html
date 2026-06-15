@@ -5,45 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Consultant</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="img/Logo.png" alt="Auto Consultant Logo" class="nav-logo-img">
+                <span>Auto Consultant</span>
+            </a>
+            <div class="nav-links">
+                <a href="servicios.html">Servicios</a>
+                <a href="#acerca">Acerca de</a>
+                <a href="#contacto" class="nav-cta">Contactanos</a>
+            </div>
+        </div>
+    </nav>
+
     <main class="main-wrapper">
 
         <!-- HERO -->
-        <section class="hero-top">
-            <h1>El tiempo es el activo más valioso de la humanidad</h1>
-
-            <div class="logo-v-wrapper">
-                <img src="img/Logo.png" alt="Logo V" class="logo-v responsive-img">
+        <section class="hero-top" id="inicio">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <p class="hero-label">Auto Consultant</p>
+                <h1>El tiempo es el activo mas valioso de la humanidad</h1>
+                <p class="hero-subtitle">Automatizamos tus procesos operativos para que puedas enfocarte en lo que realmente importa.</p>
+                <a href="servicios.html" class="cta-button">Ver servicios y precios</a>
             </div>
-
-            <div class="search-row">
-                <div class="search-container">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Buscar..." class="search-input">
-                </div>
-
-                <a href="mailto:Auto_consultant@hotmail.com" class="mail-button">✉️ Mail</a>
-            </div>
-
-            <div class="separator-line"></div>
         </section>
 
+        <div class="separator-line"></div>
 
+        <!-- ACERCA DE NOSOTROS -->
+        <section class="about-section" id="acerca">
+
+            <h2 class="section-title">Acerca de nosotros</h2>
+            <hr class="title-rule">
+
+            <div class="about-intro">
+                <img src="img/icono-derecho.png" alt="" class="about-intro-icon" aria-hidden="true">
+                <p>Somos una empresa dedicada a minimizar el tiempo operativo y maximizar el tiempo disponible tanto de analistas como duenos de negocio, por medio de multiples herramientas de automatizacion segun la necesidad del usuario y del negocio.</p>
+            </div>
+
+            <div class="before-after">
+
+                <div class="ba-card ba-before">
+                    <div class="ba-label">Actualmente - Usuario</div>
+                    <div class="ba-items">
+                        <div class="mini-bubble">Apertura de aplicaciones</div>
+                        <div class="mini-bubble">Actualizacion de datos o plantillas</div>
+                        <div class="mini-bubble">Generacion de data (graficos, tablas...)</div>
+                        <div class="mini-bubble">Envio o registro de informacion por correo</div>
+                    </div>
+                    <div class="ba-note">
+                        El operador dificilmente podra llevar a cabo proyectos adicionales porque su tiempo es consumido por tareas operativas que no agregan valor.
+                    </div>
+                </div>
+
+                <div class="ba-arrow">&#8594;</div>
+
+                <div class="ba-card ba-after ba-featured">
+                    <div class="ba-label">Post-Project - Auto Consultant</div>
+                    <div class="ba-items">
+                        <div class="mini-bubble">Revision de la informacion</div>
+                        <div class="mini-bubble">Conclusiones sobre el resultado</div>
+                        <div class="mini-bubble">Planteamiento de soluciones</div>
+                        <div class="mini-bubble">Involucramiento en otros proyectos</div>
+                    </div>
+                    <div class="ba-note">
+                        Gracias al analisis e implementaciones de mejora, el analista puede enfocarse en tareas que aporten valor al negocio.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="separator-line"></div>
+
+        <!-- COMO PODEMOS AYUDARTE -->
         <section class="top-boxes-wrapper">
+
+            <h2 class="section-title">Como podemos ayudarte?</h2>
+            <hr class="title-rule">
+
             <div class="top-boxes">
 
-                <!-- BOTÓN 1 + ÍCONO IZQUIERDO + BURBUJA -->
                 <div class="box-group">
-                    <img src="img/icono-izquierdo.png" class="icon-outside icon-left-outside responsive-img">
-
-                    <div class="box" id="btn-porque">¿Porqué nosotros?</div>
-
-                    <div id="menu-porque" class="hidden-menu">
-                        <h3>Sufre de:</h3>
+                    <img src="img/icono-izquierdo.png" class="icon-outside icon-left-outside" aria-hidden="true">
+                    <button class="box" id="btn-porque" aria-expanded="false" aria-controls="menu-porque">
+                        Por que nosotros?
+                        <span class="chevron">&#9660;</span>
+                    </button>
+                    <div id="menu-porque" class="hidden-menu" role="region">
+                        <h3>Sufres de alguno de estos problemas?</h3>
                         <div class="menu-item">Tareas repetitivas</div>
                         <div class="menu-item">Procesos complicados</div>
                         <div class="menu-item">Variaciones en tareas repetitivas</div>
@@ -51,126 +109,65 @@
                     </div>
                 </div>
 
-                <!-- BOTÓN 2 + ÍCONO DERECHO + BURBUJA -->
                 <div class="box-group">
-                    <div class="box" id="btn-dedicamos">A qué nos dedicamos</div>
-
-                    <img src="img/icono-derecho.png" class="icon-outside icon-right-outside responsive-img">
-
-                    <div id="menu-dedicamos" class="hidden-menu">
-                        <h3>La cura:</h3>
-                        <div class="menu-item">Automatización</div>
+                    <button class="box" id="btn-dedicamos" aria-expanded="false" aria-controls="menu-dedicamos">
+                        A que nos dedicamos
+                        <span class="chevron">&#9660;</span>
+                    </button>
+                    <img src="img/icono-derecho.png" class="icon-outside icon-right-outside" aria-hidden="true">
+                    <div id="menu-dedicamos" class="hidden-menu" role="region">
+                        <h3>Nuestra solucion:</h3>
+                        <div class="menu-item">Automatizacion</div>
                         <div class="menu-item">Sugerencia de mejora Six Sigma</div>
-                        <div class="menu-item">Estandarización de procesos</div>
-                        <div class="menu-item">Análisis de residuos</div>
+                        <div class="menu-item">Estandarizacion de procesos</div>
+                        <div class="menu-item">Analisis de residuos</div>
                     </div>
                 </div>
 
             </div>
 
-            <div class="separator-line"></div>
-            
-            <h2 class="section-title">Acerca de nosotros</h2>
+        </section>
 
-            <section class="about-bubbles">
+        <div class="separator-line"></div>
 
-                <div class="about-bubble post-project-bubble">
-                    <h3>Dedicados A:</h3>
+        <!-- CONTACTO -->
+        <section class="contact-section" id="contacto">
 
-                    <div class="inner-bubble post-project-inner">
-                        Somos una empresa dedicada a minimizar el tiempo operativo y maximizar el tiempo disponible tanto de analistas como dueños de negocio por medio de múltiples herramientas de automatización según la necesidad del usuario y la necesidad de negocio.
-                    </div>
+            <h2 class="section-title">Contactanos</h2>
+            <hr class="title-rule">
+
+            <div class="contact-boxes">
+
+                <div class="contact-box">
+                    <h3>Contacto directo</h3>
+                    <p><strong>Correo:</strong> Auto_consultant@hotmail.com</p>
+                    <p><strong>WhatsApp:</strong> 812 051 6646</p>
                 </div>
 
-                <div class="about-bubble">
-                    <h3 class="bubble-title">Usuario</h3>
-
-                    <div class="inner-bubble">
-                        <h4 class="inner-title">Actualmente</h4>
-
-                        <div class="two-columns">
-
-                            <!-- COLUMNA IZQUIERDA -->
-                            <div class="left-column">
-                                <div class="mini-bubble">Apertura de aplicaciones</div>
-                                <div class="mini-bubble">Actualización de datos o plantillas</div>
-                                <div class="mini-bubble">Generación de data (gráficos, tablas, etc)</div>
-                                <div class="mini-bubble">Envío o registro de información por correo</div>
-                            </div>
-
-                            <!-- COLUMNA DERECHA -->
-                            <div class="right-column">
-                                <div class="right-bubble">
-                                    Difícilmente el operador o analista podrá llevar a cabo proyectos adicionales o mejoras ya que mucho de su tiempo es consumido por tareas operativas que no agregan valor.
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <div class="contact-box">
+                    <h3>Redes sociales</h3>
+                    <p><strong>Facebook:</strong> Auto Consultant VA</p>
+                    <p><strong>Instagram:</strong> Auto Consultant VA</p>
                 </div>
 
-                <div class="about-bubble">
-                    <h3 class="bubble-title">Auto Consultant</h3>
-
-                    <div class="inner-bubble">
-                        <h4 class="inner-title">Post-Project</h4>
-
-                        <div class="two-columns">
-
-                            <!-- COLUMNA IZQUIERDA -->
-                            <div class="left-column">
-                                <div class="mini-bubble">Revisión de la información</div>
-                                <div class="mini-bubble">Conclusiones sobre el resultado</div>
-                                <div class="mini-bubble">Planteamiento de soluciones</div>
-                                <div class="mini-bubble">Involucramiento en otros proyectos</div>
-                            </div>
-
-                            <!-- COLUMNA DERECHA -->
-                            <div class="right-column">
-                                <div class="right-bubble">
-                                    Gracias al análisis e implantaciones de mejora, el analista puede llevar a cabo tareas que aporten valor al negocio, minimizando procesos residuales y pérdidas de tiempo operativas.
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <div class="contact-box">
+                    <h3>Soporte</h3>
+                    <p><strong>Correo:</strong> Auto_consultant@hotmail.com</p>
+                    <p><strong>Llamanos:</strong> 812 051 6646</p>
                 </div>
-                
-            </section>
+
+            </div>
 
         </section>
 
     </main>
 
+    <footer class="site-footer">
+        <p>Derechos de la presentacion reservados</p>
+        <p>Auto Consultant</p>
+    </footer>
+
     <script src="script.js"></script>
-
-    <div class="separator-line"></div>
-
-    <section class="contact-section">
-
-        <div class="contact-box">
-            <h3>Contáctanos</h3>
-            <p><strong>Correo:</strong> Auto_consultant@hotmail.com</p>
-            <p><strong>Whatsapp:</strong> 8120516646</p>
-        </div>
-
-        <div class="contact-box">
-            <h3>Redes sociales</h3>
-            <p><strong>Facebook:</strong> Auto Consultant VA</p>
-            <p><strong>Instagram:</strong> Auto Consultant VA</p>
-        </div>
-
-        <div class="contact-box">
-            <h3>Ayuda</h3>
-            <p><strong>Correo:</strong> Auto_consultant@hotmail.com</p>
-            <p><strong>Llámanos:</strong> 8120516646</p>
-        </div>
-
-    </section>
 
 </body>
 </html>

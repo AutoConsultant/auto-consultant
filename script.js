@@ -1,36 +1,33 @@
-// Función para cerrar todos los menús
-function cerrarTodos() {
-    document.getElementById('menu-porque').style.display = "none";
-    document.getElementById('menu-dedicamos').style.display = "none";
+// Toggle de menús desplegables
+function toggleMenu(btnId, menuId) {
+    const btn  = document.getElementById(btnId);
+    const menu = document.getElementById(menuId);
+
+    const isOpen = menu.style.display === "block";
+
+    // Cerrar todos primero
+    document.querySelectorAll('.hidden-menu').forEach(m => m.style.display = "none");
+    document.querySelectorAll('.box[aria-expanded]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+    // Si no estaba abierto, abrir este
+    if (!isOpen) {
+        menu.style.display = "block";
+        btn.setAttribute('aria-expanded', 'true');
+    }
 }
 
-// BOTÓN 1 — ¿Porqué nosotros?
 document.getElementById('btn-porque').addEventListener('click', () => {
-    const menu = document.getElementById('menu-porque');
-
-    // Si está abierto, ciérralo
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-        return;
-    }
-
-    // Cierra los demás y abre este
-    cerrarTodos();
-    menu.style.display = "block";
+    toggleMenu('btn-porque', 'menu-porque');
 });
 
-
-// BOTÓN 2 — A qué nos dedicamos
 document.getElementById('btn-dedicamos').addEventListener('click', () => {
-    const menu = document.getElementById('menu-dedicamos');
+    toggleMenu('btn-dedicamos', 'menu-dedicamos');
+});
 
-    // Si está abierto, ciérralo
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-        return;
+// Cerrar menús al hacer click fuera
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.box-group')) {
+        document.querySelectorAll('.hidden-menu').forEach(m => m.style.display = "none");
+        document.querySelectorAll('.box[aria-expanded]').forEach(b => b.setAttribute('aria-expanded', 'false'));
     }
-
-    // Cierra los demás y abre este
-    cerrarTodos();
-    menu.style.display = "block";
 });
