@@ -1148,7 +1148,7 @@
             <li>Soluciones con las herramientas que ya tienes</li>
             <li>2 sesiones de revisión incluidas</li>
           </ul>
-          <a class="btn btn-ghost" href="#cta-final">Elegir Mejora</a>
+          <a class="btn btn-ghost" href="#cta-final" onclick="notificarPaquete('Mejora')">Elegir Mejora</a>
         </div>
 
         <div class="pricing-card featured">
@@ -1167,7 +1167,7 @@
             <li>Plan de gestión del cambio</li>
             <li>Sesión adicional de soporte post-implementación</li>
           </ul>
-          <a class="btn btn-primary" href="#cta-final">Elegir Cambio</a>
+          <a class="btn btn-primary" href="#cta-final" onclick="notificarPaquete('Cambio')">Elegir Cambio</a>
         </div>
 
         <div class="pricing-card">
@@ -1185,7 +1185,7 @@
             <li>Curso práctico de Copilot incluido</li>
             <li>Entrega llave en mano</li>
           </ul>
-          <a class="btn btn-ghost" href="#cta-final">Elegir Reconstrucción</a>
+          <a class="btn btn-ghost" href="#cta-final" onclick="notificarPaquete('Reconstrucción')">Elegir Reconstrucción</a>
         </div>
       </div>
 
@@ -1205,7 +1205,7 @@
             <li>Revisión periódica del flujo</li>
             <li>Ajustes menores incluidos</li>
           </ul>
-          <a class="btn btn-ghost" href="#cta-final">Elegir Mejora mensual</a>
+          <a class="btn btn-ghost" href="#cta-final" onclick="notificarPaquete('Mejora mensual')">Elegir Mejora mensual</a>
         </div>
 
         <div class="pricing-card featured">
@@ -1223,7 +1223,7 @@
             <li>Cambios de lógica del proceso</li>
             <li>Sesión mensual de revisión y alineación</li>
           </ul>
-          <a class="btn btn-primary" href="#cta-final">Elegir Cambio mensual</a>
+          <a class="btn btn-primary" href="#cta-final" onclick="notificarPaquete('Cambio mensual')">Elegir Cambio mensual</a>
         </div>
 
         <div class="pricing-card">
@@ -1240,7 +1240,7 @@
             <li>Actualización del dashboard de seguimiento</li>
             <li>Acompañamiento mensual completo</li>
           </ul>
-          <a class="btn btn-ghost" href="#cta-final">Elegir Reconstrucción mensual</a>
+          <a class="btn btn-ghost" href="#cta-final" onclick="notificarPaquete('Reconstrucción mensual')">Elegir Reconstrucción mensual</a>
         </div>
       </div>
 
@@ -1306,6 +1306,24 @@
       document.getElementById('tab-suscripcion').style.display = tab === 'suscripcion' ? 'grid' : 'none';
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+    }
+  </script>
+
+  <!-- EMAILJS: notificacion automatica de clic en paquete -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init({ publicKey: "cbB1sI7WB8ChE9_u7" });
+    })();
+
+    function notificarPaquete(paquete) {
+      emailjs.send("service_suid03l", "template_oqlaebz", { paquete: paquete })
+        .then(function() {
+          console.log("Notificacion enviada:", paquete);
+        })
+        .catch(function(error) {
+          console.error("Error al enviar notificacion EmailJS:", error);
+        });
     }
   </script>
 
